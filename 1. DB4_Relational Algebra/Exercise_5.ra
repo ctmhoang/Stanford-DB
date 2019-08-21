@@ -1,0 +1,9 @@
+//Q5
+//1.0/1.0 point (graded)
+//Find the names of all people who eat at least one pizza served by Dominos but who do not frequent Dominos. 
+
+\project_{name} \select_{pizzeria = 'Dominos'} (
+( (\project_{name} Frequents) 
+\diff (
+\project_{name} \select_{pizzeria = 'Dominos'} Frequents)
+) \join Eats \join Serves)
