@@ -1,0 +1,5 @@
+//Q2
+//1.0/1.0 point (graded)
+//Find the names of all females who eat at least one pizza served by Straw Hat.
+//(Note: The pizza need not be eaten at Straw Hat.) 
+\project_{name} (\select_{gender = 'female' and pizzeria = 'Straw Hat'} ( Person \join Eats \join Serves))
