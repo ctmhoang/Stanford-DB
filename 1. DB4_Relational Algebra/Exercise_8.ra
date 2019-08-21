@@ -1,0 +1,12 @@
+//Q8
+//1.0/1.0 point (graded)
+//Find all pizzerias that serve only pizzas eaten by people over 30.
+//(This query is quite challenging; congratulations if you get it right.) 
+
+(\project_{pizzeria} Serves)
+\diff(
+\project_{pizzeria} (Serves
+\join(
+(\project_{pizza} Eats)
+\diff
+(\project_{pizza} \select_{age > 30} (Person \join Eats \join Serves)))))
