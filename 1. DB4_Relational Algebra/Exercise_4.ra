@@ -1,0 +1,7 @@
+//Q4
+//1.0/1.0 point (graded)
+//Find all pizzerias that serve at least one pizza for less than $10 that both Amy and Fay eat. 
+
+\project_{pizzeria} \select_{price < 10} (
+( (\project_{pizza} \select_{name = 'Amy'} Eats) \intersect (\project_{pizza} \select_{name = 'Fay'} Eats) ) \join Serves
+)
