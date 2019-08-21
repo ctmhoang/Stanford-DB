@@ -1,0 +1,18 @@
+//Q9
+//1.0/1.0 point (graded)
+//Find all pizzerias that serve every pizza eaten by people over 30.
+//(This query is very challenging; extra congratulations if you get it right.) 
+
+\project_{pizzeria}(
+(\project_{pizzeria, pizza}(
+Serves \join(
+\project_{pizza} \select_{age > 30} (Person \join Eats \join Serves))
+)
+)
+\join_{pizzeria = pizzaPalor and pizza <> pizzaPie}(
+\rename_{pizzaPalor, pizzaPie} \project_{pizzeria , pizza}(
+Serves
+\join(
+\project_{pizza} \select_{age > 30} (Person \join Eats \join Serves)))
+)
+)
