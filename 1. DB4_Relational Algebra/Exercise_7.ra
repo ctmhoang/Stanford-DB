@@ -1,0 +1,13 @@
+//Q7
+//1.0/1.0 point (graded)
+//Find the age of the oldest person (or people) who eat mushroom pizza.
+//(This query is quite challenging; congratulations if you get it right.) 
+
+( \project_{age} \select_{pizza = 'mushroom'} (Person \join Eats))
+\diff
+(\project_{age}(
+(\project_{age} \select_{pizza = 'mushroom'} (Person \join Eats) )
+\join_{age < temp}(
+ \rename_{temp} \project_{age} \select_{pizza = 'mushroom'} (Person \join Eats) )
+ )
+ )
