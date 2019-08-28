@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!-- Q3                 -->
+<!-- 1.0/1.0 point (graded)                       -->
+<!--   In this question, you are to create a DTD for a small XML data set about world countries. This data is adapted from the Mondial 3.0 database as hosted by the University of Washington, and was originally compiled by the Georg-August University of Goettingen Institute for Informatics. Each country has a name, population, and area (in sq. km). Some countries also list languages (with percentages of the population that speaks each language) and/or cities (with names and populations).              -->
+<!--   Write a DTD for the XML data set.  -->
+<!--   Important: Do not include <!DOCTYPE countries [...]> in your DTD. Your DTD should start with <!ELEMENT countries (country*)>. >.                     -->
+<!--  DO NOT INCLUDE <!DOCTYPE countries [...]> IN SANDBOX   -->
+<!DOCTYPE countries [
+<!ELEMENT countries (country*) >
+<!ATTLIST country
+          name CDATA #REQUIRED
+          population CDATA #REQUIRED
+          area CDATA #REQUIRED
+>
+<!ELEMENT country ((city+ | language+)*)? >
+<!ELEMENT city (name ,population)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT population (#PCDATA)>
+<!ATTLIST language percentage CDATA #REQUIRED>
+<!ELEMENT language (#PCDATA)>
+]>
