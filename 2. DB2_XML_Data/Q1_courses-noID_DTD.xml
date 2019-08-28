@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!-- Q1                   -->
+<!-- 1.0/1.0 point (graded)                       -->
+<!--   In this question, you are to create a DTD for a small XML data set drawn from the Stanford course catalog. There are multiple departments, each with a department chair, some courses, and professors and/or lecturers who teach courses.              -->
+<!--   Write a DTD for the XML data set.  -->
+<!--   Important: Do not include <!DOCTYPE Course_Catalog [...]> in your DTD. Your DTD should start with <!ELEMENT Course_Catalog (Department*)>.                     -->
+<!--  DO NOT INCLUDE <!DOCTYPE Course_Catalog [...]> IN SANDBOX   -->
+<!DOCTYPE Course_Catalog [
+<!ELEMENT Course_Catalog (Department*)>
+<!ATTLIST Department Code ID #REQUIRED>
+<!ELEMENT Department (Title, Chair, Course+)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Chair (Professor) >
+<!ATTLIST Course 
+          Number ID #REQUIRED
+          Enrollment CDATA #IMPLIED 
+>
+<!ELEMENT Course (Title, Description? , Instructors, Prerequisites? )>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Instructors (Lecturer?| Professor+)* >
+<!ELEMENT Lecturer (First_Name, Middle_Initial? , Last_Name)>
+<!ELEMENT Professor (First_Name, Middle_Initial? ,Last_Name)>
+<!ELEMENT First_Name (#PCDATA)>
+<!ELEMENT Middle_Initial (#PCDATA)>
+<!ELEMENT Last_Name (#PCDATA)>
+<!ELEMENT Prerequisites (Prereq?)+ >
+<!ELEMENT Prereq (#PCDATA)>
+]>
