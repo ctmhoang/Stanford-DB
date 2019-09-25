@@ -1,3 +1,1 @@
 *.sql linguist-language=SQLPL
-*.ra linguist-language=SQLPL
-*.xml linguist-language=XSLT
