@@ -15,5 +15,5 @@ from Rating R1, Rating R2
 where R1.rID = R2.rID and R1.ratingDate > R2.ratingDate) Temp
 where R1.rID = Temp.rID) Temp
 group by (Temp.rID))
-where margin < 3) lastTemp
+where margin <= 1) lastTemp
 using (rID)
